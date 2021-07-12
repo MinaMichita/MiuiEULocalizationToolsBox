@@ -1,0 +1,12 @@
+<resources>
+    <string-array name="xposed_scopes" >
+        <item>moe.minamigo.MiuiEULocalization</item>
+        <item>com.miui.securitycore</item>
+        <item>com.google.android.inputmethod.latin</item>
+        <item>android</item>
+        <item>com.miui.powerkeeper</item>
+        <item>com.xiaomi.powerchecker</item>
+        <item>com.miui.home</item>
+        <item>com.miui.core</item>
+    </string-array>
+</resources>
