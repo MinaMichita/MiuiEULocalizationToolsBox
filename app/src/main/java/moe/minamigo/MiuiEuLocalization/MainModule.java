@@ -12,6 +12,7 @@ import de.robv.android.xposed.XposedBridge;
 import de.robv.android.xposed.XposedHelpers;
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
 
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,16 +57,16 @@ public class MainModule implements IXposedHookLoadPackage {
                     XposedBridge.log("Hooked " + pkg + " Error: " + e.toString());
                 }
                 break;
-            case "android":
+            case "com.miui.home":
                 try{
-                    handleAndroid(lpparam);
+                    handleMiuiHome(lpparam);
                 }catch(Exception e) {
                     XposedBridge.log("Hooked " + pkg + " Error: " + e.toString());
                 }
                 break;
+            case "android":
             case "com.miui.powerkeeper":
             case "com.xiaomi.powerchecker":
-            case "com.miui.home":
             case "com.miui.core":
                 try{
                     handleInternational(lpparam);
@@ -76,9 +77,33 @@ public class MainModule implements IXposedHookLoadPackage {
         }
     }
 
-    private void handleSelf(XC_LoadPackage.LoadPackageParam lpparam) {
-        final Class<?> classBuild = XposedHelpers.findClass("moe.minamigo.MiuiEuLocalization.MainActivity", lpparam.classLoader);
-        XposedHelpers.setStaticBooleanField(classBuild, "isXposedModuleEnable", true);
+    private void handleMiuiHome(XC_LoadPackage.LoadPackageParam lpparam) {
+        handleInternational(lpparam);
+
+        Class<?> clazz_NotificationManagerServiceInjector = XposedHelpers.findClass("com.miui.home.launcher.MIUIWidgetUtil", lpparam.classLoader);
+        final Method[] declareMethods_NotificationManagerServiceInjector = clazz_NotificationManagerServiceInjector.getDeclaredMethods();
+        Method isMiuiWidgetSupportMethod = null;
+        for (Method method : declareMethods_NotificationManagerServiceInjector) {
+            if (method.getName().equals("isMIUIWidgetSupport")) {
+                isMiuiWidgetSupportMethod = method;
+                break;
+            }
+        }
+        if (isMiuiWidgetSupportMethod != null) {
+            XposedBridge.hookMethod(isMiuiWidgetSupportMethod, new XC_MethodHook() {
+                @Override
+                protected void beforeHookedMethod(MethodHookParam methodHookParam) throws Throwable {
+                    handleChina(lpparam);
+                }
+
+                @Override
+                protected void afterHookedMethod(MethodHookParam methodHookParam) throws Throwable {
+                    handleInternational(lpparam);
+                }
+            });
+        } else{
+            XposedBridge.log("isMiuiWidgetSupportMethod is not found!");
+        }
     }
 
     private void handleSecuritycore(XC_LoadPackage.LoadPackageParam lpparam) {
@@ -86,6 +111,23 @@ public class MainModule implements IXposedHookLoadPackage {
         XposedHelpers.setStaticObjectField(XposedHelpers.findClass("com.miui.xspace.constant.XSpaceApps", lpparam.classLoader), "XSPACE_INTRODUCE_APPS", this.XSPACE_INTRODUCE_APPS);
     }
 
+    public void checkVersion() {
+        switch (Build.VERSION.SDK_INT) {
+            case 28:
+            case 29:
+                this.isA10 = true;
+                this.isA11 = false;
+                return;
+            case 30:
+                this.isA10 = false;
+                this.isA11 = true;
+                return;
+            default:
+                this.isA10 = false;
+                this.isA11 = false;
+                return;
+        }
+    }
     private void handleGboard(XC_LoadPackage.LoadPackageParam lpparam) {
         checkVersion();
         final Class<?> clazz = XposedHelpers.findClass("android.inputmethodservice.InputMethodServiceInjector", lpparam.classLoader);
@@ -127,10 +169,9 @@ public class MainModule implements IXposedHookLoadPackage {
         }});
     }
 
-    private void handleAndroid(XC_LoadPackage.LoadPackageParam lpparam) {
-        handleInternational(lpparam);
-        final Class<?> classBuild = XposedHelpers.findClass("com.android.server.notification.NotificationManagerServiceInjector", lpparam.classLoader);
-        XposedHelpers.findAndHookMethod(classBuild, "isAllowLocalNotification", new Object[]{XC_MethodReplacement.returnConstant(true)});
+    private void handleSelf(XC_LoadPackage.LoadPackageParam lpparam) {
+        final Class<?> clazz = XposedHelpers.findClass("moe.minamigo.MiuiEuLocalization.MainActivity", lpparam.classLoader);
+        XposedHelpers.setStaticBooleanField(clazz, "isXposedModuleEnable", true);
     }
 
     private void handleInternational(XC_LoadPackage.LoadPackageParam lpparam) {
@@ -138,28 +179,9 @@ public class MainModule implements IXposedHookLoadPackage {
         XposedHelpers.setStaticBooleanField(classBuild, "IS_INTERNATIONAL_BUILD", true);
         XposedHelpers.setStaticBooleanField(classBuild, "IS_GLOBAL_BUILD", true);
     }
-
-    private void handleChinese(XC_LoadPackage.LoadPackageParam lpparam) {
+    private void handleChina(XC_LoadPackage.LoadPackageParam lpparam) {
         final Class<?> classBuild = XposedHelpers.findClass("miui.os.Build", lpparam.classLoader);
         XposedHelpers.setStaticBooleanField(classBuild, "IS_INTERNATIONAL_BUILD", false);
         XposedHelpers.setStaticBooleanField(classBuild, "IS_GLOBAL_BUILD", false);
-    }
-
-    public void checkVersion() {
-        switch (Build.VERSION.SDK_INT) {
-            case 28:
-            case 29:
-                this.isA10 = true;
-                this.isA11 = false;
-                return;
-            case 30:
-                this.isA10 = false;
-                this.isA11 = true;
-                return;
-            default:
-                this.isA10 = false;
-                this.isA11 = false;
-                return;
-        }
     }
 }

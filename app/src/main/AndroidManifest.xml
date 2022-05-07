@@ -9,10 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.本地化工具箱">
-        <service
-            android:name=".commandService"
-            android:enabled="true"
-            android:exported="true"></service>
 
         <activity android:name=".MainActivity">
             <intent-filter>

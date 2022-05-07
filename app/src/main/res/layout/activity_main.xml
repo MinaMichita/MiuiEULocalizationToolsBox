@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView_deviceStatusText"
+        android:id="@+id/textView_device_status_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -17,62 +17,62 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView_rootStateText"
+        android:id="@+id/textView_root_state_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:text="Root状态："
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_deviceStatusText" />
+        app:layout_constraintTop_toBottomOf="@+id/textView_device_status_text" />
 
     <TextView
-        android:id="@+id/textView_rootState"
+        android:id="@+id/textView_root_state"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:text="这里是Root状态"
-        app:layout_constraintStart_toEndOf="@+id/textView_rootStateText"
-        app:layout_constraintTop_toBottomOf="@+id/textView_deviceStatusText" />
+        app:layout_constraintStart_toEndOf="@+id/textView_root_state_text"
+        app:layout_constraintTop_toBottomOf="@+id/textView_device_status_text" />
 
     <TextView
-        android:id="@+id/textView_magiskModuleVersionText"
+        android:id="@+id/textView_magisk_module_version_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:text="Magisk模块版本："
+        android:text="本地化Magisk模块版本："
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_xposedModuleStateText" />
+        app:layout_constraintTop_toBottomOf="@+id/textView_xposed_module_state_text" />
 
     <TextView
-        android:id="@+id/textView_appVersionNameText"
+        android:id="@+id/textView_app_version_name_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:text="工具箱版本："
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_magiskModuleVersionText" />
+        app:layout_constraintTop_toBottomOf="@+id/textView_magisk_module_version_text" />
 
     <Button
-        android:id="@+id/button_fixPermissions"
+        android:id="@+id/button_fix_permissions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:onClick="fixPermissionsHandler"
         android:text="修复系统应用权限"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_recheckDeviceStatus" />
+        app:layout_constraintTop_toBottomOf="@+id/button_recheck_device_status" />
 
     <TextView
-        android:id="@+id/textView_magiskModuleVersion"
+        android:id="@+id/textView_magisk_module_version"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:text="这里是Magisk模块版本"
-        app:layout_constraintStart_toEndOf="@+id/textView_magiskModuleVersionText"
-        app:layout_constraintTop_toBottomOf="@+id/textView_xposedModuleStateText" />
+        app:layout_constraintStart_toEndOf="@+id/textView_magisk_module_version_text"
+        app:layout_constraintTop_toBottomOf="@+id/textView_xposed_module_state_text" />
 
     <Button
-        android:id="@+id/button_recheckDeviceStatus"
+        android:id="@+id/button_recheck_device_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -80,20 +80,20 @@
         android:onClick="recheckDeviceStatusHandler"
         android:text="更新上述设备状态"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_appVersionNameText" />
+        app:layout_constraintTop_toBottomOf="@+id/textView_app_version_name_text" />
 
     <TextView
-        android:id="@+id/textView_appVersionName"
+        android:id="@+id/textView_app_version_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginTop="0dp"
         android:text="这里是工具箱版本"
-        app:layout_constraintStart_toEndOf="@+id/textView_appVersionNameText"
-        app:layout_constraintTop_toBottomOf="@+id/textView_magiskModuleVersionText" />
+        app:layout_constraintStart_toEndOf="@+id/textView_app_version_name_text"
+        app:layout_constraintTop_toBottomOf="@+id/textView_magisk_module_version_text" />
 
     <TextView
-        android:id="@+id/textView_specialThanks"
+        android:id="@+id/textView_special_thanks"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
@@ -103,118 +103,47 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView_gboardThanks"
+        android:id="@+id/textView_gboard_thanks"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:text="Gboard全面屏优化来自MIUI_IME_Unlock"
-        app:layout_constraintBottom_toTopOf="@+id/textView_specialThanks"
+        app:layout_constraintBottom_toTopOf="@+id/textView_special_thanks"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView_xposedModuleStateText"
+        android:id="@+id/textView_xposed_module_state_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:text="Xposed模块状态："
+        android:text="工具箱Xposed模块激活状态："
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_rootStateText" />
+        app:layout_constraintTop_toBottomOf="@+id/textView_root_state_text" />
 
     <TextView
-        android:id="@+id/textView_xposedModuleState"
+        android:id="@+id/textView_xposed_module_state"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:text="这里是Xposed模块状态"
-        app:layout_constraintStart_toEndOf="@+id/textView_xposedModuleStateText"
-        app:layout_constraintTop_toBottomOf="@+id/textView_rootStateText" />
-
-    <Button
-        android:id="@+id/button_fixLocalNofitication"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:onClick="fixLocalNofiticationHanlder"
-        android:text="修复应用后台服务通知(自动重启)"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_usageWarning" />
-
-    <Button
-        android:id="@+id/button_killTethering"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:onClick="killProcessesHandler"
-        android:text="杀进程"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_hideThemeFolder" />
-
-    <Button
-        android:id="@+id/button_fixMusic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:onClick="fixMusicHandler"
-        android:text="修复音乐闪退"
-        app:layout_constraintStart_toEndOf="@+id/button_fixMipay"
-        app:layout_constraintTop_toBottomOf="@+id/button_fixPermissions" />
-
-    <Button
-        android:id="@+id/button_fixVirtualSim"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:onClick="fixVirtualSimHandler"
-        android:text="修复全球上网闪退"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_fixMipay" />
-
-    <Button
-        android:id="@+id/button_fixVoiceAssist"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:onClick="fixVoiceAssistHandler"
-        android:text="修复小爱按键唤醒重启清除"
-        app:layout_constraintStart_toEndOf="@+id/button_fixVirtualSim"
-        app:layout_constraintTop_toBottomOf="@+id/button_fixMipay" />
-
-    <Button
-        android:id="@+id/button_fixMipay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:onClick="fixMipayHandler"
-        android:text="修复钱包闪退"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_fixPermissions" />
+        app:layout_constraintStart_toEndOf="@+id/textView_xposed_module_state_text"
+        app:layout_constraintTop_toBottomOf="@+id/textView_root_state_text" />
 
     <TextView
-        android:id="@+id/textView_usageWarning"
+        android:id="@+id/textView_usage_warning"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:text="下面的功能非必需/已废弃，不懂不要用！"
+        android:layout_marginTop="8dp"
+        android:text="以下功能非必需，可根据需求使用"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_fixVirtualSim" />
+        app:layout_constraintTop_toBottomOf="@+id/button_fix_permissions" />
 
     <Button
-        android:id="@+id/button_renice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:onClick="reniceHandler"
-        android:text="调整进程优先级"
-        app:layout_constraintStart_toEndOf="@+id/button_killTethering"
-        app:layout_constraintTop_toBottomOf="@+id/button_hideThemeFolder" />
-
-    <Button
-        android:id="@+id/button_deleteErrorLog"
+        android:id="@+id/button_delete_error_log"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -222,12 +151,12 @@
         android:layout_marginBottom="8dp"
         android:onClick="deleteErrorLogHandler"
         android:text="清空错误日志"
-        app:layout_constraintBottom_toTopOf="@+id/textView_gboardThanks"
-        app:layout_constraintEnd_toStartOf="@+id/button_packageErrorLog"
+        app:layout_constraintBottom_toTopOf="@+id/textView_author"
+        app:layout_constraintEnd_toStartOf="@+id/button_package_error_log"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button_packageErrorLog"
+        android:id="@+id/button_package_error_log"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -235,18 +164,39 @@
         android:layout_marginBottom="8dp"
         android:onClick="packageErrorLogHandler"
         android:text="打包错误日志"
-        app:layout_constraintBottom_toTopOf="@+id/textView_gboardThanks"
+        app:layout_constraintBottom_toTopOf="@+id/textView_author"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button_deleteErrorLog" />
+        app:layout_constraintStart_toEndOf="@+id/button_delete_error_log" />
 
     <Button
-        android:id="@+id/button_hideThemeFolder"
+        android:id="@+id/button_hide_theme_folder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:onClick="hideThemeFolderHandler"
         android:text="隐藏相册的主题文件夹"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_fixLocalNofitication" />
+        app:layout_constraintTop_toBottomOf="@+id/textView_usage_warning" />
+
+    <Button
+        android:id="@+id/button_allow_system_app_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:onClick="allowSysAppUpdateHandler"
+        android:text="允许任意应用安装系统应用更新"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_hide_theme_folder" />
+
+    <TextView
+        android:id="@+id/textView_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="作者：酷安@MinaMichita"
+        app:layout_constraintBottom_toTopOf="@+id/textView_gboard_thanks"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
