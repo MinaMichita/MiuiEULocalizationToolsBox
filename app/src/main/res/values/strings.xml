@@ -1,3 +1,26 @@
 <resources>
-    <string name="app_name">本地化工具箱</string>
+    <string name="app_name">LocalizationToolbox</string>
+    <string name="mainactivity_textview_device_state">Device State</string>
+    <string name="mainactivity_textview_root_state">Root State:</string>
+    <string name="mainactivity_textview_xposed_module_state">Xposed Module State:</string>
+    <string name="mainactivity_textview_magisk_module_state">Magisk Module State:</string>
+    <string name="mainactivity_textview_toolsbox_version">Toolbox Version:</string>
+    <string name="mainactivity_button_refresh_device_state">Refresh Device State</string>
+    <string name="mainactivity_button_reset_app_permission">Reset App Permission(Auto Reboot)</string>
+    <string name="mainactivity_button_grant_system_app_permission">Grant System App Permission</string>
+    <string name="mainactivity_button_hide_theme_folder">Hide Theme Folder</string>
+    <string name="mainactivity_button_allow_install_system_app">Allow Install System App</string>
+    <string name="mainactivity_button_package_error_log">Package Error Log</string>
+    <string name="mainactivity_button_delete_error_log">Delete Error Log</string>
+    <string name="mainactivity_toast_nonroot">Device hasn\'t rooted or toolbox doesn\'t have root access!</string>
+    <string name="mainactivity_toast_processing">Processing... Please wait for a minute...</string>
+    <string name="mainactivity_toast_process_success">Process successed</string>
+    <string name="mainactivity_toast_process_failed">Process failed!</string>
+    <string name="mainactivity_text_check_app_version_failed">Error occurred</string>
+    <string name="mainactivity_text_xposed_module_activated">Activated</string>
+    <string name="mainactivity_text_xposed_module_inactivated">Inactivated</string>
+    <string name="mainactivity_text_magisk_module_not_installed">Not installed!</string>
+    <string name="mainactivity_toast_magisk_module_tools_not_match">Warning: This version of toolbox doesn\'t match magisk module version!</string>
+    <string name="mainactivity_toast_not_magisk_module_installed">Error: Magisk module has not installed.</string>
+    <string name="mainactivity_toast_package_error_log_success">Done. File Path: /sdcard/MiuiEULocalization/ErrorLog.tar \\n This archieve contains basic info of this device. Don\'t share it in the public place.</string>
 </resources>

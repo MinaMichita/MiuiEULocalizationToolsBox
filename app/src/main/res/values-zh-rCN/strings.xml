@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">本地化工具箱</string>
+    <string name="mainactivity_textview_device_state">设备状态</string>
+    <string name="mainactivity_textview_root_state">Root状态:</string>
+    <string name="mainactivity_textview_xposed_module_state">Xposed模块状态:</string>
+    <string name="mainactivity_textview_magisk_module_state">Magisk模块状态:</string>
+    <string name="mainactivity_textview_toolsbox_version">工具箱版本:</string>
+    <string name="mainactivity_button_refresh_device_state">刷新设备状态</string>
+    <string name="mainactivity_button_reset_app_permission">重置应用权限(自动重启)</string>
+    <string name="mainactivity_button_grant_system_app_permission">修复系统应用权限</string>
+    <string name="mainactivity_button_hide_theme_folder">隐藏主题文件夹</string>
+    <string name="mainactivity_button_allow_install_system_app">允许安装系统应用</string>
+    <string name="mainactivity_button_package_error_log">打包错误日志</string>
+    <string name="mainactivity_button_delete_error_log">删除错误日志</string>
+    <string name="mainactivity_toast_nonroot">设备未root或工具箱无root权限！</string>
+    <string name="mainactivity_toast_processing">处理中，请稍后...</string>
+    <string name="mainactivity_toast_process_success">操作成功</string>
+    <string name="mainactivity_toast_process_failed">操作失败！</string>
+    <string name="mainactivity_text_check_app_version_failed">发生错误</string>
+    <string name="mainactivity_text_xposed_module_activated">已激活</string>
+    <string name="mainactivity_text_xposed_module_inactivated">未激活！</string>
+    <string name="mainactivity_text_magisk_module_not_installed">未安装！</string>
+    <string name="mainactivity_toast_magisk_module_tools_not_match">警告：工具箱版本和Magisk模块版本不匹配！</string>
+    <string name="mainactivity_toast_not_magisk_module_installed">错误：未安装Maigks模块</string>
+    <string name="mainactivity_toast_package_error_log_success">完成。文件路径:/sdcard/MiuiEULocalization/ErrorLog.tar\\n日志包含设备基本信息，请勿公开发布！</string>
+</resources>
