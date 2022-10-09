@@ -160,7 +160,7 @@
         android:text="@string/mainactivity_button_hide_theme_folder"
         android:textAllCaps="false"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_fix_permissions" />
+        app:layout_constraintTop_toBottomOf="@+id/button_reset_package_restriction" />
 
     <Button
         android:id="@+id/button_allow_system_app_update"
@@ -172,5 +172,27 @@
         android:textAllCaps="false"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_hide_theme_folder" />
+
+    <Button
+        android:id="@+id/button_clean_package_cache"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/mainactivity_button_clean_package_cache"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_fix_permissions"
+        android:onClick="cleanPackageCacheHandler" />
+
+    <Button
+        android:id="@+id/button_reset_package_restriction"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:onClick="resetPackageRestrictionHandler"
+        android:text="@string/mainactivity_button_reset_package_restriction"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_clean_package_cache" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

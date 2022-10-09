@@ -7,7 +7,7 @@
     <string name="mainactivity_textview_magisk_module_state">Magisk模組狀態:</string>
     <string name="mainactivity_textview_toolsbox_version">工具箱版本:</string>
     <string name="mainactivity_button_refresh_device_state">刷新設備狀態</string>
-    <string name="mainactivity_button_reset_app_permission">重置應用權限(自動重啟)</string>
+    <string name="mainactivity_button_reset_app_permission">重置應用權限</string>
     <string name="mainactivity_button_grant_system_app_permission">修復系統應用權限</string>
     <string name="mainactivity_button_hide_theme_folder">隱藏主題檔案夾</string>
     <string name="mainactivity_button_allow_install_system_app">允許安裝系統應用</string>
@@ -24,4 +24,6 @@
     <string name="mainactivity_toast_magisk_module_tools_not_match">警告：工具箱版本和Magisk模塊版本不匹配！</string>
     <string name="mainactivity_toast_not_magisk_module_installed">錯誤：未安裝Magisk模塊。</string>
     <string name="mainactivity_toast_package_error_log_success">完成。文檔路徑:/sdcard/MiuiEULocalization/ErrorLog.tar\\n日誌含有設備基本信息，請勿公開發布！</string>
+    <string name="mainactivity_button_clean_package_cache">清除包緩存</string>
+    <string name="mainactivity_button_reset_package_restriction">清除包限制</string>
 </resources>

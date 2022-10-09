@@ -70,10 +70,11 @@ public class MainActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, processingToastString, Toast.LENGTH_SHORT).show();
         }
-        if (!rootCommand("rm -f /data/misc_de/0/apexdata/com.android.permission/runtime-permissions.xml && reboot")) {
+        if (!rootCommand("rm -f /data/misc_de/0/apexdata/com.android.permission/runtime-permissions.xml")) {
             Toast.makeText(this, processFailedToastString, Toast.LENGTH_SHORT).show();
             return;
         }
+        rootCommand("/system/bin/svc power reboot || /system/bin/reboot");
         Toast.makeText(this, processSuccessedToastString, Toast.LENGTH_SHORT).show();
     }
     public void fixPermissionsHandler(View view) {
@@ -90,6 +91,36 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, processFailedToastString, Toast.LENGTH_SHORT).show();
             return;
         }
+        Toast.makeText(this, processSuccessedToastString, Toast.LENGTH_SHORT).show();
+    }
+
+    public void cleanPackageCacheHandler(View view) {
+        if (!this.isRooted) {
+            Toast.makeText(this, nonrootToastString, Toast.LENGTH_SHORT).show();
+            return;
+        } else {
+            Toast.makeText(this, processingToastString, Toast.LENGTH_SHORT).show();
+        }
+        if (!rootCommand("rm -rf /data/system/package_cache/*")) {
+            Toast.makeText(this, processFailedToastString, Toast.LENGTH_SHORT).show();
+            return;
+        }
+        rootCommand("/system/bin/svc power reboot || /system/bin/reboot");
+        Toast.makeText(this, processSuccessedToastString, Toast.LENGTH_SHORT).show();
+    }
+
+    public void resetPackageRestrictionHandler(View view) {
+        if (!this.isRooted) {
+            Toast.makeText(this, nonrootToastString, Toast.LENGTH_SHORT).show();
+            return;
+        } else {
+            Toast.makeText(this, processingToastString, Toast.LENGTH_SHORT).show();
+        }
+        if (!rootCommand("rm -rf /data/system/users/0/package-restrictions.xml")) {
+            Toast.makeText(this, processFailedToastString, Toast.LENGTH_SHORT).show();
+            return;
+        }
+        rootCommand("/system/bin/svc power reboot || /system/bin/reboot");
         Toast.makeText(this, processSuccessedToastString, Toast.LENGTH_SHORT).show();
     }
 
